@@ -8,7 +8,7 @@ import "../styles/styles.scss";
 
 import { auth } from "../firebase/firebase-util";
 import CartIcon from "./icon/cart-icon";
-import CartDropdown from "./cart-dropdown/cart-dropdown";
+import CartDropdown from "./cart/cart-dropdown";
 
 const Header = ({ currentUser, hidden }) => {
   return (

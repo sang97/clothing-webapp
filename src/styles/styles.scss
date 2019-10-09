@@ -103,6 +103,7 @@
   flex-direction: column;
   height: 350px;
   align-items: center;
+  position: relative;
 
   .image {
     width: 100%;
@@ -110,6 +111,25 @@
     background-size: cover;
     background-position: center;
     margin-bottom: 5px;
+  }
+
+  .custom-button {
+    width: 80%;
+    opacity: 0.7;
+    position: absolute;
+    top: 255px;
+    display: none;
+  }
+
+  &:hover {
+    .image {
+      opacity: 0.8;
+    }
+
+    .custom-button {
+      opacity: 0.85;
+      display: flex;
+    }
   }
 
   .collection-footer {
@@ -259,6 +279,8 @@ $main-color: black;
   font-weight: bolder;
   border: none;
   cursor: pointer;
+  display: flex;
+  justify-content: center;
 
   &:hover {
     background-color: white;
@@ -272,6 +294,18 @@ $main-color: black;
 
     &:hover {
       background-color: #357ae8;
+      border: none;
+    }
+  }
+
+  &.inverted {
+    background-color: white;
+    color: black;
+    border: 1px solid black;
+
+    &:hover {
+      background-color: black;
+      color: white;
       border: none;
     }
   }
@@ -301,7 +335,7 @@ $main-color: black;
 
 .cart-dropdown {
   position: absolute;
-  width: 240px;
+  width: 270px;
   height: 340px;
   display: flex;
   flex-direction: column;
@@ -316,10 +350,34 @@ $main-color: black;
     height: 240px;
     display: flex;
     flex-direction: column;
-    overflow: scroll;
+    overflow: auto;
   }
 
   button {
     margin-top: auto;
+  }
+}
+
+.cart-item {
+  width: 100%;
+  display: flex;
+  height: 80px;
+  margin-bottom: 15px;
+
+  img {
+    width: 30%;
+  }
+
+  .item-details {
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 10px 20px;
+
+    .name {
+      font-size: 16px;
+    }
   }
 }
