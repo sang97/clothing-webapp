@@ -5,7 +5,7 @@ import { connect } from "react-redux";
 import "./App.css";
 
 import HomePage from "./pages/homepage";
-import ShopPage from "./pages/shop/shop-page";
+import ShopPage from "./pages/shop-page";
 import AuthenticationPage from "./pages/auth-page";
 import CheckoutPage from "./pages/checkout-page";
 
