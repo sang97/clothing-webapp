@@ -9,7 +9,7 @@ import ShopPage from "./pages/shop-page";
 import AuthenticationPage from "./pages/auth-page";
 import CheckoutPage from "./pages/checkout-page";
 
-import Header from "./components/header";
+import Header from "./components/header/header";
 
 import { auth, createUserProfileDocument } from "./firebase/firebase-util";
 import { setCurrentUser } from "./redux/user/user-actions";
@@ -26,11 +26,11 @@ class App extends Component {
       if (userAuth) {
         const userRef = await createUserProfileDocument(userAuth);
 
-        const snapShot = await userRef.get();
-
-        setCurrentUser({
-          id: snapShot.id,
-          ...snapShot.data()
+        userRef.onSnapshot(snapShot => {
+          setCurrentUser({
+            id: snapShot.id,
+            ...snapShot.data()
+          });
         });
       } else {
         setCurrentUser(null);
